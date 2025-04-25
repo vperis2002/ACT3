@@ -36,7 +36,6 @@ def mostrar_vuelos_disponibles(vuelos):
         print(vuelo)
 
 def reservar_vuelo(lista, numero_vuelo, pasajero, cantidad):
-    
     for v in lista:
         if v.numero_vuelo == numero_vuelo:
             if cantidad <= 0:
@@ -52,6 +51,15 @@ def reservar_vuelo(lista, numero_vuelo, pasajero, cantidad):
                 return
     print("No se encontró ningún vuelo con el número especificado.")
 
+def obtener_datos_reserva():
+    nombre = input("Ingrese su nombre: ")
+    apellido = input("Ingrese su apellido: ")
+    edad = int(input("Ingrese su edad: "))
+    telefono = input("Ingrese su número de teléfono: ")
+    correo = input("Ingrese su correo electrónico: ")
+
+    pasajero = Pasajero(nombre, apellido, edad, telefono, correo)
+
 
 def main():
     vuelos = [
@@ -66,14 +74,7 @@ def main():
     if opcion == '1':
         mostrar_vuelos_disponibles(vuelos)
     elif opcion == '2':
-        #extraer método
-        nombre = input("Ingrese su nombre: ")
-        apellido = input("Ingrese su apellido: ")
-        edad = int(input("Ingrese su edad: "))
-        telefono = input("Ingrese su número de teléfono: ")
-        correo = input("Ingrese su correo electrónico: ")
-
-        pasajero = Pasajero(nombre, apellido, edad, telefono, correo)
+        obtener_datos_reserva()
 
         #extraer método
         numero = input("Ingrese el número de vuelo que desea reservar: ")
