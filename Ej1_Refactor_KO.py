@@ -73,7 +73,7 @@ def main():
         telefono = input("Ingrese su número de teléfono: ")
         correo = input("Ingrese su correo electrónico: ")
 
-        pasajero = Pasajero(n, a, e, t, c)
+        pasajero = Pasajero(nombre, apellido, edad, telefono, correo)
 
         #extraer método
         numero = input("Ingrese el número de vuelo que desea reservar: ")
