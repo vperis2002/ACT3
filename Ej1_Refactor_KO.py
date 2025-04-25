@@ -35,6 +35,17 @@ def mostrar_vuelos_disponibles(vuelos):
     for vuelo in vuelos:
         print(vuelo)
 
+def validar_numero_asientos():
+    numero = input("Ingrese el número de vuelo que desea reservar: ")
+    cantidad = int(input("Ingrese la cantidad de asientos que desea reservar (máximo 10): "))
+    if cantidad > 10:
+        print("No puedes hacer una reserva mayor a 10 asientos")
+    elif cantidad < 1:
+        print("Esa cantidad no es válida")
+    else:
+        print("La cantidad de asientos es válida")
+    
+
 def reservar_vuelo(lista, numero_vuelo, pasajero, cantidad):
     for v in lista:
         if v.numero_vuelo == numero_vuelo:
@@ -75,11 +86,7 @@ def main():
         mostrar_vuelos_disponibles(vuelos)
     elif opcion == '2':
         obtener_datos_reserva()
-
-        #extraer método
-        numero = input("Ingrese el número de vuelo que desea reservar: ")
-        cantidad = int(input("Ingrese la cantidad de asientos que desea reservar (máximo 10): "))
-
+        validar_numero_asientos()
         reservar_vuelo(vuelos, numero, pasajero, cantidad)
     else:
         print("Opción no válida.")
